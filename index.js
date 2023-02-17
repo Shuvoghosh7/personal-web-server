@@ -33,6 +33,11 @@ const run = async () => {
       const result = await cursor.toArray();
       res.send({ status: true, data: result });
     });
+    app.get("/latest_project", async (req, res) => {
+      const cursor = projectCollection.find({});
+      const result = await cursor.toArray();
+      res.send({ status: true, data: result });
+    })
    
   } finally {
   }
